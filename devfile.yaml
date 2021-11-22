@@ -1,0 +1,33 @@
+schemaVersion: 2.1.0
+metadata:
+  name: react
+attributes:
+  che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
+components:
+  - name: nodejs
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      endpoints:
+        - exposure: public
+          name: nodejs
+          protocol: http
+          targetPort: 4100
+      memoryLimit: 1G
+      mountSources: true
+commands:
+  - id: install
+    exec:
+      label: "Install all required dependencies"
+      component: nodejs
+      workingDir: ${PROJECTS_ROOT}/react-redux-realworld-example-app
+      commandLine: "npm install"
+      group:
+        kind: build
+  - id: start
+    exec:
+      label: "Start the local server"
+      component: nodejs
+      workingDir: ${PROJECTS_ROOT}/react-redux-realworld-example-app
+      commandLine: "npm start"
+      group:
+        kind: run
