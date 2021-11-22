@@ -19,7 +19,7 @@ commands:
     exec:
       label: "Install all required dependencies"
       component: nodejs
-      workingDir: ${PROJECTS_ROOT}/react-redux-realworld-example-app
+      workingDir: ${PROJECTS_ROOT}/nodejs-react-redux
       commandLine: "npm install"
       group:
         kind: build
@@ -27,7 +27,7 @@ commands:
     exec:
       label: "Start the local server"
       component: nodejs
-      workingDir: ${PROJECTS_ROOT}/react-redux-realworld-example-app
+      workingDir: ${PROJECTS_ROOT}/nodejs-react-redux
       commandLine: "npm start"
       group:
         kind: run
