@@ -9,7 +9,7 @@ components:
       endpoints:
         - exposure: public
           name: nodejs
-          protocol: http
+          protocol: https
           targetPort: 4100
 
 commands:
